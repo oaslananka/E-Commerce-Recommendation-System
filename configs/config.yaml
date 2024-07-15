@@ -1,0 +1,47 @@
+# config.yaml
+
+# Data paths
+data:
+  raw_data_path: "data/raw/"
+  processed_data_path: "data/processed/"
+  external_data_path: "data/external/"
+
+# Model parameters
+model:
+  name: "collaborative_filtering"
+  type: "matrix_factorization"
+  num_factors: 10
+  regularization: 0.1
+  learning_rate: 0.01
+  epochs: 50
+
+# Training parameters
+training:
+  batch_size: 256
+  validation_split: 0.2
+  early_stopping: True
+  early_stopping_patience: 5
+
+# AWS SageMaker configuration
+aws_sagemaker:
+  region: "us-west-2"
+  instance_type: "ml.m4.xlarge"
+  role: "arn:aws:iam::123456789012:role/SageMakerRole"
+
+# Google Cloud AI Platform configuration
+gcloud_ai_platform:
+  project_id: "my-gcloud-project"
+  region: "us-central1"
+  master_type: "n1-standard-4"
+  package_uris: ["gs://my-bucket/trainer-0.1.tar.gz"]
+  job_dir: "gs://my-bucket/jobs/"
+
+# Logging configuration
+logging:
+  level: "INFO"
+  log_file: "logs/app.log"
+
+# API settings
+api:
+  host: "0.0.0.0"
+  port: 8080

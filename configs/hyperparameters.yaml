@@ -1,0 +1,13 @@
+# hyperparameters.yaml
+
+model:
+  num_factors: 10
+  regularization: 0.1
+  learning_rate: 0.01
+  epochs: 50
+
+training:
+  batch_size: 256
+  validation_split: 0.2
+  early_stopping: True
+  early_stopping_patience: 5
